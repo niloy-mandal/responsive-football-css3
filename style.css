@@ -1,3 +1,6 @@
+:root {
+  --nil: #2d25a0;
+}
 /* Google fonts import */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
@@ -13,16 +16,19 @@ Common CSS
 
 .container {
   width: 1160px;
+  margin: 0 auto;
+}
+
+.flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Header part start */
 
 header {
-  width: 100%;
-  height: 650px;
-  background: #2d25a0;
+  background: var(--nil);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,14 +49,9 @@ nav a {
   padding: 10px;
 }
 
-.header-full {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 .heading-part {
-  display: flex;
-  align-items: center;
+  height: 100%;
+  padding: 0 1rem 86px;
 }
 
 .heading-title {
@@ -74,6 +75,11 @@ nav a {
 }
 
 /* Main */
+
+.header-full {
+  background-color: var(--nil);
+  width: 100%;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -149,6 +155,42 @@ p {
   margin-bottom: 2rem;
 }
 
+/* Sign up part */
+
+.cta {
+  background-color: green;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-capture {
+  max-width: 768px;
+  margin: 1rem auto 0;
+}
+
+.cta-capture input {
+  width: 60%;
+  display: inline-block;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 4rem 0 0 4rem;
+  outline: none;
+}
+
+.cta-capture button {
+  background-color: #e02c6d;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 0 4rem 4rem 0;
+  cursor: pointer;
+}
+
 /* Footer Part */
 footer {
   display: flex;
@@ -168,4 +210,68 @@ footer i {
   padding: 5px;
   border-radius: 45%;
   margin: 20px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1050px) {
+  header {
+    display: none;
+  }
+  .highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 0;
+  }
+  .highlights-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .flex {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .highlights-banner img {
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+  }
+  .players {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 27px;
+    margin: 70px;
+  }
+  .cta-capture button {
+    background-color: #e02c6d;
+    border-radius: 15px;
+    padding: 0.2rem 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .cta-capture input {
+    width: 80%;
+    border-radius: 15px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .players {
+    grid-template-columns: 1fr;
+  }
 }
